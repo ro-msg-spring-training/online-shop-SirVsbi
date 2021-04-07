@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS `Supplier`
 (
-    SupplierId IDENTITY NOT NULL PRIMARY KEY,
+    SupplierId IDENTITY PRIMARY KEY,
     Name       VARCHAR(255)
 );
 
