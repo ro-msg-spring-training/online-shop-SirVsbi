@@ -1,14 +1,13 @@
 package ro.msg.learning.shop.model;
 
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Set;
+
 
 @Entity
 @AllArgsConstructor
@@ -18,6 +17,7 @@ import java.util.Set;
 @Setter
 @Table(name = "product")
 @EqualsAndHashCode
+@ToString
 public class Product implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,7 +37,7 @@ public class Product implements Serializable{
     private Supplier supplierId;
 
     @ManyToOne(targetEntity = ProductCategory.class, fetch = FetchType.LAZY)
-    @JoinColumn(name = "ProductCategoryId")
+    @JoinColumn(name = "ProductCategoryId", foreignKey = @ForeignKey(name = "FK_PRODUCT_CATEGORY"))
 
     private ProductCategory productCategoryId;
 

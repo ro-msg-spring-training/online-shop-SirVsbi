@@ -1,10 +1,10 @@
 package ro.msg.learning.shop.dto;
 
 import lombok.*;
-import ro.msg.learning.shop.model.Supplier;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.Set;
+
 
 
 @AllArgsConstructor
@@ -12,7 +12,8 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
-public class ProductDto {
+@ToString
+public class ProductDto implements Serializable {
     private long productId;
     private String name;
     private String description;
@@ -21,6 +22,6 @@ public class ProductDto {
     private long supplierId;
     private long productCategoryId;
     private String imageUrl;
-    private Supplier supplier;
+    private SupplierDto supplier;
 
 }

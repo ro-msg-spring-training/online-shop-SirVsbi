@@ -7,6 +7,7 @@ import ro.msg.learning.shop.repository.SupplierRepository;
 import ro.msg.learning.shop.service.interfaces.SupplierService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SupplierServiceImplementation implements SupplierService {
@@ -22,5 +23,10 @@ public class SupplierServiceImplementation implements SupplierService {
     @Override
     public void addSupplier(Supplier supplier) {
         this.repository.save(supplier);
+    }
+
+    @Override
+    public Optional<Supplier> getSupplierById(Long id) {
+        return this.repository.findById(id);
     }
 }

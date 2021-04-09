@@ -1,13 +1,10 @@
 package ro.msg.learning.shop.model;
 
 
-
 import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-
-
 
 @Entity
 @AllArgsConstructor
@@ -15,13 +12,17 @@ import java.io.Serializable;
 @Builder
 @Getter
 @Setter
-@Table(name = "supplier")
+@Table(name = "location")
 @EqualsAndHashCode
 @ToString
-public class Supplier implements Serializable {
+public class Location implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long supplierId;
+    private Long locationId;
     private String name;
+
+    @ManyToOne(targetEntity = Address.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "AddressId")
+    private Address address;
 
 }
