@@ -5,9 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+
 
 @Entity
 @AllArgsConstructor
@@ -28,6 +26,4 @@ public class ProductCategory implements Serializable {
 
     private String description;
 
-    @OneToMany(mappedBy = "productCategoryId", cascade = CascadeType.ALL, targetEntity = Product.class)
-    private List<Product> products;
 }

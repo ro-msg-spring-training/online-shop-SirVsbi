@@ -1,15 +1,18 @@
 package ro.msg.learning.shop.service.interfaces;
 
-import ro.msg.learning.shop.model.Supplier;
+import ro.msg.learning.shop.dto.SupplierDto;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface SupplierService {
-    List<Supplier> getAllSuppliers();
+    List<SupplierDto> getAllSuppliers();
 
-    void addSupplier(Supplier supplier);
+    void addSupplier(SupplierDto supplier);
 
-    Optional<Supplier> getSupplierById(Long id);
+    SupplierDto getSupplierById(Long id);
+
+    SupplierDto updateSupplier(Long id, SupplierDto supplierDto);
+
+    void deleteSupplier(Long id);
 
 }

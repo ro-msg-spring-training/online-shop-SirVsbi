@@ -1,9 +1,7 @@
 package ro.msg.learning.shop.response;
 
 import lombok.*;
-import ro.msg.learning.shop.dto.ProductCategoryDto;
-
-import java.util.ArrayList;
+import java.util.List;
 
 @AllArgsConstructor
 @Builder
@@ -11,5 +9,5 @@ import java.util.ArrayList;
 @Setter
 @ToString
 public class ListResponse<T> {
-    private ArrayList<T> response;
+    private List<T> response;
 }
